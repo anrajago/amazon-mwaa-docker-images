@@ -15,7 +15,7 @@ status=0
 # Function to check a directory
 check_dir() {
     local dir=$1  # Directory to work in
-    local venv_dir="${dir}/.venv"  # virtual environment path
+    local venv_dir="${dir}/.venv"  # Virtual environment path
 
     echo "Checking directory \"${dir}\"..."
 
@@ -37,6 +37,9 @@ check_dir() {
     else
         echo "TruffleHog scan passed."
     fi
+
+    # Clean up the temporary exclusion file
+    rm -f "$EXCLUDE_FILE"
 
     # Deactivate the virtual environment
     deactivate

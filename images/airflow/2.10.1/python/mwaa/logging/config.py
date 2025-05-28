@@ -33,10 +33,16 @@ from airflow.config_templates.airflow_local_settings import (
 from mwaa.logging import cloudwatch_handlers
 from mwaa.utils import qualified_name
 
+CONSOLE_LOG_LEVEL = os.environ.get('AIRFLOW_CONSOLE_LOG_LEVEL', 'INFO')
 # We adopt the default logging configuration from Airflow and do the necessary changes
 # to setup logging with CloudWatch Logs.
 LOGGING_CONFIG = {
     **DEFAULT_LOGGING_CONFIG,
+    'root': {
+        'handlers': ['console'],
+        'level': CONSOLE_LOG_LEVEL,
+        'filters': ['mask_secrets'],
+    }
 }
 
 
@@ -147,6 +153,7 @@ def _configure_subprocesses_logging(
     log_stream_name_prefix: str,
     log_level: str,
     logging_enabled: bool,
+    log_formatter: logging.Formatter | None = None,
 ):
     logger_name = MWAA_LOGGERS[subprocess_name.lower()]
     handler_name = logger_name.replace(".", "_")
@@ -160,6 +167,7 @@ def _configure_subprocesses_logging(
             "stream_name_prefix": log_stream_name_prefix,
             "logs_source": subprocess_name,
             "enabled": logging_enabled,
+            "log_formatter": log_formatter,
         }
         # Setup CloudWatch logging.
         LOGGING_CONFIG["loggers"][logger_name] = {
@@ -181,7 +189,7 @@ def _configure():
             comp,
             log_group_arn=log_group_arn,
             log_stream_name_prefix=comp.lower(),
-            log_level=log_level,
+            log_level="DEBUG",  # Customer Log Level handled at root logger
             logging_enabled=logging_enabled,
         )
         _configure_subprocesses_logging(
@@ -190,6 +198,7 @@ def _configure():
             log_stream_name_prefix="requirements_install",
             log_level="INFO",  # We always want to publish requirements logs.
             logging_enabled=logging_enabled,
+            log_formatter=logging.Formatter('[%(levelname)s] - %(message)s')
         )
         _configure_subprocesses_logging(
             f"{comp}_startup",
@@ -197,6 +206,7 @@ def _configure():
             log_stream_name_prefix="startup_script_execution",
             log_level="INFO",  # We always want to publish startup script logs.
             logging_enabled=logging_enabled,
+            log_formatter=logging.Formatter('[%(levelname)s] - %(message)s')
         )
 
 # Airflow has a dedicated logger for the DAG Processor Manager

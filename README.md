@@ -8,7 +8,7 @@ MWAA](https://aws.amazon.com/managed-workflows-for-apache-airflow/) uses to run 
 You can also use it locally if you want to run a MWAA-like environment for testing, experimentation,
 and development purposes.
 
-Currently, Airflow v2.9.2 and v2.10.1 are supported. Future versions in parity with Amazon MWAA will be added as
+Currently, Airflow v2.9.2 and above are supported. Future versions in parity with Amazon MWAA will be added as
 well. _Notice, however, that we do not plan to support previous Airflow versions supported by MWAA._
 
 ## Using the Airflow Image
@@ -33,13 +33,12 @@ python3 create_venvs.py --target <development | production>
    with the provided credentials will be assigned to the Airflow components that would be started with the next step. 
    So, if you receive any error message indicating lack of permissions, then try providing the permissions to the 
    identity whose credentials were used.
-   - Create the required log groups in the dev account with the names:
+   - `./run.sh` This will build and run all the necessary containers and automatically create the following CloudWatch log groups:
      - `{ENV_NAME}-DAGProcessing`
      - `{ENV_NAME}-Scheduler`
      - `{ENV_NAME}-Worker`
      - `{ENV_NAME}-Task`
      - `{ENV_NAME}-WebServer`
-   - `./run.sh` This will build and run all the necessary containers.
 
 Airflow should be up and running now. You can access the web server on your localhost on port 8080.
 
@@ -93,6 +92,30 @@ Each of the postfixes added to the image tag represents a certain build type, as
   etc. Thus, we install an editor in the dev images to aid with such use cases. Similarly, we
   install tools like `wget` to make it possible for the user to fetch web pages. For a complete
   listing of what is installed in `dev` images, see the `bootstrap-dev` folders.
+
+
+## Extra commands
+
+#### Requirements
+
+- Add Python dependencies to `requirements/requirements.txt`
+- To test a `requirements.txt` without running Apache Airflow, run:
+```bash
+./run.sh test-requirements
+```
+
+#### Startup script
+
+- There is a folder in each airflow version called `startup_script`. Add your script there as `startup.sh`
+- If there is a need to run additional setup (e.g. install system libraries, setting up environment variables), please modify the `startup.sh` script.
+- To test a `startup.sh` without running Apache Airflow, run:
+```bash
+./run.sh  test-startup-script
+```
+
+#### Reset database
+
+- If you encountered [the following error](https://issues.apache.org/jira/browse/AIRFLOW-3678): `process fails with "dag_stats_table already exists"`, you'll need to reset your database. You just need to restart your container by exiting and rerunning the `run.sh` script
 
 ## Security
 

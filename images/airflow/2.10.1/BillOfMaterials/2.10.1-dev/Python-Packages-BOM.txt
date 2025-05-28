@@ -6162,13 +6162,13 @@ Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 /usr/local/airflow/.local/lib/python3.11/site-packages/boto3-1.35.7.dist-info/NOTICE
 
 boto3-stubs
-1.35.54
+1.38.18
 MIT License
 https://github.com/youtype/mypy_boto3_builder
-/usr/local/airflow/.local/lib/python3.11/site-packages/boto3_stubs-1.35.54.dist-info/LICENSE
+/usr/local/airflow/.local/lib/python3.11/site-packages/boto3_stubs-1.38.18.dist-info/licenses/LICENSE
 MIT License
 
-Copyright (c) 2024 Vlad Emelianov
+Copyright (c) 2025 Vlad Emelianov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -6437,10 +6437,10 @@ one at http://mozilla.org/MPL/2.0/.
 /usr/local/airflow/.local/lib/python3.11/site-packages/botocore-1.35.7.dist-info/NOTICE
 
 botocore-stubs
-1.35.54
+1.38.18
 MIT License
 https://github.com/youtype/botocore-stubs
-/usr/local/airflow/.local/lib/python3.11/site-packages/botocore_stubs-1.35.54.dist-info/LICENSE
+/usr/local/airflow/.local/lib/python3.11/site-packages/botocore_stubs-1.38.18.dist-info/licenses/LICENSE
 MIT License
 
 Copyright (c) 2022 Vlad Emelianov
@@ -6957,7 +6957,7 @@ dill
 0.3.1.1
 BSD License
 https://pypi.org/project/dill
-/usr/local/airflow/.local/lib/python3.11/site-packages/dill-0.3.1.1.dist-info/LICENSE
+/usr/local/airflow/.local/lib/python3.11/site-packages/dill-0.3.1.1.dist-info/licenses/LICENSE
 Copyright (c) 2004-2016 California Institute of Technology.
 Copyright (c) 2016-2019 The Uncertainty Quantification Foundation.
 All rights reserved.
@@ -10196,13 +10196,13 @@ UNKNOWN
 UNKNOWN
 
 mypy-boto3-logs
-1.35.54
+1.38.16
 MIT License
 https://github.com/youtype/mypy_boto3_builder
-/usr/local/airflow/.local/lib/python3.11/site-packages/mypy_boto3_logs-1.35.54.dist-info/LICENSE
+/usr/local/airflow/.local/lib/python3.11/site-packages/mypy_boto3_logs-1.38.16.dist-info/licenses/LICENSE
 MIT License
 
-Copyright (c) 2024 Vlad Emelianov
+Copyright (c) 2025 Vlad Emelianov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -10225,13 +10225,13 @@ UNKNOWN
 UNKNOWN
 
 mypy-boto3-sqs
-1.35.0
+1.38.0
 MIT License
 https://github.com/youtype/mypy_boto3_builder
-/usr/local/airflow/.local/lib/python3.11/site-packages/mypy_boto3_sqs-1.35.0.dist-info/LICENSE
+/usr/local/airflow/.local/lib/python3.11/site-packages/mypy_boto3_sqs-1.38.0.dist-info/licenses/LICENSE
 MIT License
 
-Copyright (c) 2024 Vlad Emelianov
+Copyright (c) 2025 Vlad Emelianov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -12796,7 +12796,7 @@ psycopg2
 2.9.10
 GNU Library or Lesser General Public License (LGPL)
 https://psycopg.org/
-/usr/local/airflow/.local/lib/python3.11/site-packages/psycopg2-2.9.10.dist-info/LICENSE
+/usr/local/airflow/.local/lib/python3.11/site-packages/psycopg2-2.9.10.dist-info/licenses/LICENSE
 psycopg2 and the LGPL
 ---------------------
 
@@ -12945,7 +12945,7 @@ UNKNOWN
 UNKNOWN
 
 pycurl
-7.45.3
+7.45.6
 GNU Library or Lesser General Public License (LGPL); MIT License
 http://pycurl.io/
 /usr/local/airflow/.local/lib/python3.11/site-packages/../../../share/doc/pycurl/COPYING-LGPL
@@ -13732,7 +13732,7 @@ python-nvd3
 0.16.0
 MIT License
 http://github.com/areski/python-nvd3
-/usr/local/airflow/.local/lib/python3.11/site-packages/python_nvd3-0.16.0.dist-info/LICENSE
+/usr/local/airflow/.local/lib/python3.11/site-packages/python_nvd3-0.16.0.dist-info/licenses/LICENSE
 The MIT License (MIT)
 
 Python-nvd3
@@ -15434,10 +15434,10 @@ UNKNOWN
 UNKNOWN
 
 types-awscrt
-0.23.0
+0.27.2
 MIT License
 https://github.com/youtype/types-awscrt
-/usr/local/airflow/.local/lib/python3.11/site-packages/types_awscrt-0.23.0.dist-info/LICENSE
+/usr/local/airflow/.local/lib/python3.11/site-packages/types_awscrt-0.27.2.dist-info/licenses/LICENSE
 MIT License
 
 Copyright (c) 2022 Vlad Emelianov
@@ -15464,10 +15464,10 @@ UNKNOWN
 UNKNOWN
 
 types-s3transfer
-0.10.3
+0.12.0
 MIT License
 https://github.com/youtype/types-s3transfer
-/usr/local/airflow/.local/lib/python3.11/site-packages/types_s3transfer-0.10.3.dist-info/LICENSE
+/usr/local/airflow/.local/lib/python3.11/site-packages/types_s3transfer-0.12.0.dist-info/licenses/LICENSE
 MIT License
 
 Copyright (c) 2022 Vlad Emelianov
